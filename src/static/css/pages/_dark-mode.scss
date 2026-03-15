@@ -214,6 +214,10 @@ body.dark-mode {
   .degree-container {
     background: rgba(88,166,255,0.05);
     border-left-color: $dark-accent;
+
+    header p {
+      color: $dark-fg;
+    }
   }
 
   .jobs-container {
