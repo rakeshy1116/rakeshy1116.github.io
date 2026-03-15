@@ -160,6 +160,36 @@
 		}
 	}
 
+	/* Dark mode toggle */
+	.dark-mode-toggle {
+		display: flex;
+		align-items: center;
+		padding: 0 1em;
+		border-left: solid 1px _palette(border);
+
+		.dark-mode-button {
+			background: transparent;
+			border: solid 1px _palette(border);
+			border-radius: 50%;
+			color: _palette(fg);
+			cursor: pointer;
+			font-size: 0.85em;
+			height: 2em;
+			line-height: 1;
+			padding: 0;
+			width: 2em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: border-color 0.2s ease, color 0.2s ease;
+
+			&:hover {
+				border-color: _palette(accent);
+				color: _palette(accent);
+			}
+		}
+	}
+
 	/* Position and sizing of burger button */
 	.bm-burger-button {
 		display: none;

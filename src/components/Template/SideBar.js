@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ContactIcons from '../Contact/ContactIcons';
@@ -9,7 +8,7 @@ const SideBar = () => (
   <section id="sidebar">
     <section id="intro">
       <Link to="/" className="logo">
-        <img src={`${PUBLIC_URL}/images/me.jpeg`} alt="" />
+        <img src={`${PUBLIC_URL}/images/me.jpeg`} alt="Rakesh Chowdary Yarlagadda" />
       </Link>
       <header>
         <h2>Rakesh Chowdary Yarlagadda</h2>
@@ -20,8 +19,7 @@ const SideBar = () => (
 
     <section className="blurb">
       <h2>About</h2>
-      <p>Hello, I&apos;m Rakesh Chowdary. I am a graduate student at <a href="https://www.colorado.edu/">University of Colorado Boulder</a> pursing Masters in Computer Science,
-        and Former Senior Data Engineer at <a href="https://corporate.target.com/">Target Corporation</a>.
+      <p>Hello, I&apos;m Rakesh Chowdary. I am a Data Engineer III at <a href="https://tech.walmart.com/">Walmart Global Tech</a> and an M.S. CS graduate from <a href="https://www.colorado.edu/">University of Colorado Boulder</a>. Former Data Engineer at <a href="https://corporate.target.com/">Target Corporation</a>.
       </p>
       <ul className="actions">
         <li>

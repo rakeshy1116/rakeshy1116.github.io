@@ -14,6 +14,8 @@ import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
 import { skills, categories } from '../data/resume/skills';
 
+const { PUBLIC_URL } = process.env;
+
 // NOTE: sections are displayed in order defined.
 const sections = {
   Education: () => <Education data={degrees} />,
@@ -26,7 +28,7 @@ const sections = {
 const Resume = () => (
   <Main
     title="Resume"
-    description="Rakesh Chowdary Yarlagadda's Resume. CU Boulder, Target Corporation."
+    description="Rakesh Chowdary Yarlagadda's Resume. Data Engineer III at Walmart Global Tech. M.S. CS, CU Boulder."
   >
     <article className="post" id="resume">
       <header>
@@ -38,6 +40,16 @@ const Resume = () => (
                 <a href={`#${sec.toLowerCase()}`}>{sec}</a>
               </h4>))}
           </div>
+        </div>
+        <div className="meta">
+          <a
+            href={`${PUBLIC_URL}/resume.pdf`}
+            className="button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download PDF
+          </a>
         </div>
       </header>
       {Object.entries(sections).map(([name, Section]) => (

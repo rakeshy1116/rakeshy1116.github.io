@@ -5,7 +5,13 @@ import CategoryButton from './Skills/CategoryButton';
 import SkillBar from './Skills/SkillBar';
 
 const Skills = ({ skills, categories }) => {
-  const initialButtons = Object.fromEntries([['All', false]].concat(categories.map(({ name }) => [name, false])));
+  const defaultCategory = 'Data Engineering';
+  const initialButtons = Object.fromEntries(
+    [['All', false]].concat(categories.map(({ name }) => [name, name === defaultCategory])),
+  );
+  // If the default category doesn't exist in the list, fall back to showing All
+  const hasDefault = categories.some(({ name }) => name === defaultCategory);
+  if (!hasDefault) initialButtons.All = true;
 
   const [buttons, setButtons] = useState(initialButtons);
 
@@ -61,9 +67,7 @@ const Skills = ({ skills, categories }) => {
       <div className="link-to" id="skills" />
       <div className="title">
         <h3>Skills</h3>
-        <p>Note: I think these sections are silly, but everyone seems to have one.
-          Here is a *mostly* honest overview of my skills.
-        </p>
+        <p>Competency rated 1&ndash;5. Click a category to filter.</p>
       </div>
       <div className="skill-button-container">
         {getButtons()}

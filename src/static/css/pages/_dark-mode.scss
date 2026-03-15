@@ -1,0 +1,212 @@
+// Dark Mode Overrides
+// Applied when <body class="dark-mode"> is set via the Navigation toggle.
+
+$dark-bg:          #0d1117;
+$dark-bg-alt:      #161b22;
+$dark-bg-card:     #1c2128;
+$dark-fg:          #c9d1d9;
+$dark-fg-bold:     #e6edf3;
+$dark-fg-light:    #8b949e;
+$dark-accent:      #58a6ff;
+$dark-border:      rgba(255, 255, 255, 0.1);
+$dark-border-alt:  rgba(255, 255, 255, 0.25);
+
+body.dark-mode {
+  background: $dark-bg-alt;
+  color: $dark-fg;
+
+  // ── Header ──────────────────────────────────────────────────────
+  #header {
+    background-color: $dark-bg;
+    border-bottom-color: $dark-border;
+    color: $dark-fg;
+
+    a { color: $dark-fg; }
+
+    .links {
+      border-left-color: $dark-border;
+
+      ul li {
+        border-left-color: $dark-border;
+      }
+    }
+
+    .bm-menu {
+      background: $dark-bg;
+    }
+  }
+
+  // ── Mobile menu ─────────────────────────────────────────────────
+  .bm-menu {
+    background: $dark-bg;
+    color: $dark-fg-bold;
+  }
+
+  .bm-item-list {
+    color: $dark-fg-bold;
+  }
+
+  // ── Dark mode toggle button ──────────────────────────────────────
+  .dark-mode-toggle .dark-mode-button {
+    color: $dark-fg;
+    background: transparent;
+    border-color: $dark-border;
+
+    &:hover {
+      color: $dark-fg-bold;
+      border-color: $dark-border-alt;
+    }
+  }
+
+  // ── Posts / articles ────────────────────────────────────────────
+  .post {
+    background: $dark-bg-card;
+    border-color: $dark-border;
+    color: $dark-fg;
+
+    > header {
+      border-bottom-color: $dark-border;
+
+      .meta {
+        border-left-color: $dark-border;
+        color: $dark-fg-light;
+
+        .published { color: $dark-fg-bold; }
+      }
+    }
+
+    > footer .stats li {
+      border-left-color: $dark-border;
+    }
+  }
+
+  // ── Mini posts (Projects) ────────────────────────────────────────
+  .mini-post {
+    background: $dark-bg-card;
+    border-color: $dark-border;
+
+    header {
+      background: $dark-bg-card;
+      border-bottom-color: $dark-border;
+
+      h3 a { color: $dark-fg-bold; }
+      time { color: $dark-fg-light; }
+    }
+  }
+
+  // ── Sidebar ─────────────────────────────────────────────────────
+  #sidebar {
+    color: $dark-fg;
+
+    > * { border-top-color: $dark-border; }
+
+    a { color: $dark-accent; }
+
+    #intro header h2 { color: $dark-fg-bold; }
+
+    .blurb {
+      h2 { color: $dark-fg-bold; }
+      p  { color: $dark-fg; }
+    }
+
+    #footer p { color: $dark-fg-light; }
+  }
+
+  // ── Typography ──────────────────────────────────────────────────
+  h1, h2, h3, h4, h5, h6 { color: $dark-fg-bold; }
+  p, li { color: $dark-fg; }
+  a { color: $dark-accent; }
+
+  strong, b { color: $dark-fg-bold; }
+
+  // ── Buttons ─────────────────────────────────────────────────────
+  .button {
+    background-color: transparent;
+    border-color: $dark-border-alt;
+    color: $dark-fg-bold;
+
+    &:hover {
+      background-color: $dark-border;
+      border-color: $dark-fg-light;
+    }
+  }
+
+  // ── Resume sections ─────────────────────────────────────────────
+  .resume-section,
+  .education,
+  .work,
+  .skills,
+  .courses,
+  .references {
+    .title h3 { color: $dark-fg-bold; }
+    border-top-color: $dark-border;
+  }
+
+  .degree-container {
+    .degree  { color: $dark-fg-bold; }
+    .school  { color: $dark-fg; }
+    .gpa     { color: $dark-fg-light; }
+  }
+
+  .work-item {
+    border-top-color: $dark-border;
+
+    header {
+      h3 { color: $dark-fg-bold; }
+      .company, .duration, .location { color: $dark-fg-light; }
+    }
+
+    ul li { color: $dark-fg; }
+  }
+
+  // ── Skill bars ──────────────────────────────────────────────────
+  .skill-row {
+    background: $dark-border;
+
+    .skill-name { color: $dark-fg-bold; }
+
+    .cell {
+      background: $dark-border;
+      &.filled { background: $dark-accent; }
+    }
+  }
+
+  .skill-button-container button {
+    background: $dark-bg-card;
+    border-color: $dark-border;
+    color: $dark-fg;
+
+    &.active {
+      background: $dark-accent;
+      color: $dark-bg;
+      border-color: $dark-accent;
+    }
+  }
+
+  // ── Course list ──────────────────────────────────────────────────
+  .course-list li {
+    border-color: $dark-border;
+    color: $dark-fg;
+
+    a { color: $dark-accent; }
+  }
+
+  // ── Tables ──────────────────────────────────────────────────────
+  table {
+    thead tr { border-bottom-color: $dark-border-alt; }
+    tbody tr { border-top-color: $dark-border; }
+    th { color: $dark-fg-bold; }
+    td { color: $dark-fg; }
+  }
+
+  // ── Form elements ───────────────────────────────────────────────
+  input, textarea, select {
+    background: $dark-bg-card;
+    border-color: $dark-border;
+    color: $dark-fg;
+
+    &:focus {
+      border-color: $dark-accent;
+    }
+  }
+}
