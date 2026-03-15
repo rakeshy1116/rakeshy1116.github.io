@@ -14,10 +14,11 @@ $dark-border-alt:  rgba(255, 255, 255, 0.25);
 body.dark-mode {
   background: $dark-bg-alt;
   color: $dark-fg;
+  -webkit-font-smoothing: antialiased;
 
   // ── Header ──────────────────────────────────────────────────────
   #header {
-    background-color: $dark-bg;
+    background-color: rgba(13,17,23,0.88);
     border-bottom-color: $dark-border;
     color: $dark-fg;
 
@@ -25,15 +26,10 @@ body.dark-mode {
 
     .links {
       border-left-color: $dark-border;
-
-      ul li {
-        border-left-color: $dark-border;
-      }
+      ul li { border-left-color: $dark-border; }
     }
 
-    .bm-menu {
-      background: $dark-bg;
-    }
+    .bm-menu { background: $dark-bg; }
   }
 
   // ── Mobile menu ─────────────────────────────────────────────────
@@ -205,8 +201,70 @@ body.dark-mode {
     border-color: $dark-border;
     color: $dark-fg;
 
-    &:focus {
-      border-color: $dark-accent;
+    &:focus { border-color: $dark-accent; }
+  }
+
+  // ── Modern overrides ────────────────────────────────────────────
+  .post, .mini-post {
+    background: $dark-bg-card;
+    border-color: $dark-border;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .degree-container {
+    background: rgba(88,166,255,0.05);
+    border-left-color: $dark-accent;
+  }
+
+  .jobs-container {
+    border-left-color: rgba(88,166,255,0.25);
+
+    .job::before { background: $dark-accent; }
+  }
+
+  .skillbar { background: rgba(255,255,255,0.08); }
+
+  .skillbar-title span,
+  .skillbar-title { color: $dark-fg-bold; }
+
+  .skillbutton {
+    background: rgba(255,255,255,0.06) !important;
+    color: $dark-fg !important;
+
+    &:hover {
+      background: rgba(88,166,255,0.15) !important;
+      border-color: $dark-accent !important;
+      color: $dark-accent !important;
     }
   }
+
+  .skillbutton-active {
+    background: $dark-accent !important;
+    color: $dark-bg !important;
+  }
+
+  .courses .course-list li {
+    background: rgba(255,255,255,0.07);
+  }
+
+  .course-name { color: $dark-fg-bold !important; }
+
+  .cell-container .description p {
+    background-color: rgba(22,27,34,0.88);
+    color: $dark-fg;
+    &:hover { background-color: rgba(28,33,40,0.96); }
+  }
+
+  .contact-icons a {
+    background: rgba(255,255,255,0.07);
+    &:hover { background: $dark-accent; }
+  }
+
+  ::selection {
+    background: rgba(88,166,255,0.25);
+    color: $dark-fg-bold;
+  }
+
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
 }

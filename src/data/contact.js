@@ -40,7 +40,7 @@ const data = [
   //   icon: faTwitter,
   // },
   {
-    link: 'mailto:rakeshchowdary.yarlagadda@colorado.edu',
+    link: 'mailto:yrakeshchowdary1116@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },

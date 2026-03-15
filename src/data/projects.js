@@ -12,12 +12,22 @@ const data = [
   {
     title: 'BuffLink - CU Boulder Event Notifier',
     link: 'https://github.com/rakeshy1116/hackCU-BuffLink',
-    image: '/images/projects/logo.png',
+    image: '/images/projects/bufflink.png',
     date: '2024-03-02',
     desc:
       'Browser extension built at HackCU that delivers personalized campus event notifications to CU Boulder students. '
       + 'Uses DistilBERT and FAISS to identify relevant events with 75% confidence and sends calendar (.ics) invites via email. '
       + 'Events stored in AWS DynamoDB. Built with JavaScript, Python, Flask, and BeautifulSoup.',
+  },
+  {
+    title: 'Gaanam - Full Stack Web Application',
+    link: 'https://github.com/rakeshy1116/Gaanam',
+    image: '/images/projects/gaanam.png',
+    date: '2024-04-30',
+    desc:
+      'Full-stack web application developed for CSCI-5828 coursework at CU Boulder. '
+      + 'Built with a React frontend and Python/Flask backend, with Cypress end-to-end testing. '
+      + 'Deployed on AWS Amplify.',
   },
   {
     title: 'Spotify Analytics Application',
