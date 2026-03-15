@@ -1,9 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Modern UI Overrides
-// Applied on top of the legacy Future Imperfect base styles.
 // ─────────────────────────────────────────────────────────────────────────────
 
-// ── Tokens ───────────────────────────────────────────────────────────────────
 $radius-sm:   6px;
 $radius-md:   10px;
 $radius-lg:   16px;
@@ -14,117 +12,84 @@ $shadow-md:   0 4px 12px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
 $shadow-lg:   0 8px 24px rgba(0,0,0,0.10), 0 16px 40px rgba(0,0,0,0.08);
 $shadow-lift: 0 12px 32px rgba(37,99,235,0.14), 0 4px 12px rgba(0,0,0,0.08);
 
-$ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-$transition:  0.25s $ease-out;
+$ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+$transition: 0.25s $ease-out;
 
-// ── Body & page ──────────────────────────────────────────────────────────────
+// ── Body ──────────────────────────────────────────────────────────────────────
 body {
   background: _palette(bg-alt);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// ── Typography — remove dated ALL CAPS on headings ───────────────────────────
+// ── Typography — only remove ALL CAPS, don't touch font sizes ─────────────────
 h1, h2, h3, h4, h5, h6 {
   text-transform: none;
   letter-spacing: -0.01em;
-  line-height: 1.4;
 }
-
-h2 { font-size: 1.25em; }
-h3 { font-size: 1.05em; }
 
 a {
-  transition: color $transition, border-color $transition, opacity $transition;
   border-bottom: none;
-
-  &:hover { opacity: 0.8; }
+  transition: color $transition, opacity $transition;
+  &:hover { opacity: 0.85; }
 }
 
-// ── Navigation ───────────────────────────────────────────────────────────────
+// ── Navigation ────────────────────────────────────────────────────────────────
 #header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255,255,255,0.88);
+  background-color: rgba(255,255,255,0.9);
   border-bottom: 1px solid rgba(140,140,160,0.15);
   box-shadow: $shadow-sm;
 
   h1 a {
-    font-size: 0.8em;
     font-weight: 800;
     letter-spacing: -0.02em;
-    color: _palette(fg-bold);
     border-bottom: none;
   }
 
   .links ul li a {
-    font-size: 0.72em;
-    letter-spacing: 0.04em;
     font-weight: 600;
     transition: color $transition;
-
     &:hover { color: _palette(accent) !important; }
   }
 }
 
-// ── Main content cards (post) ─────────────────────────────────────────────────
+// ── Cards ─────────────────────────────────────────────────────────────────────
 .post {
   border-radius: $radius-lg;
-  border: 1px solid rgba(140,140,160,0.15);
+  border-color: rgba(140,140,160,0.15);
   box-shadow: $shadow-sm;
   transition: box-shadow $transition;
-
   &:hover { box-shadow: $shadow-md; }
 
   > header {
-    border-bottom: 1px solid rgba(140,140,160,0.12);
+    border-bottom-color: rgba(140,140,160,0.12);
     border-radius: $radius-lg $radius-lg 0 0;
   }
 }
 
 // ── Sidebar ───────────────────────────────────────────────────────────────────
-#sidebar {
-  > * { border-top-color: rgba(140,140,160,0.15); }
-}
+#sidebar > * { border-top-color: rgba(140,140,160,0.15); }
 
-// Profile image — larger, ring effect
-#intro .logo {
-  img {
-    width: 9em;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 3px _palette(accent), $shadow-md;
-    transition: box-shadow $transition, transform $transition;
+// Profile image — ring effect, keep original size
+#intro .logo img {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px _palette(accent), $shadow-md;
+  transition: box-shadow $transition, transform $transition;
 
-    &:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 0 3px _palette(accent), $shadow-lg;
-    }
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 3px _palette(accent), $shadow-lg;
   }
 }
 
 #intro header {
-  h2 {
-    font-size: 1.3em;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: _palette(fg-bold);
-    text-transform: none;
-  }
-
-  p {
-    font-size: 0.78em;
-    color: _palette(fg-light);
-  }
+  h2 { font-weight: 800; letter-spacing: -0.02em; }
+  p  { color: _palette(fg-light); }
 }
 
-.blurb p { font-size: 0.85em; line-height: 1.7; }
-
-// Sidebar footer
-#footer p {
-  font-size: 0.7em;
-  color: _palette(fg-light);
-}
+.blurb p { line-height: 1.7; }
 
 // ── Buttons ───────────────────────────────────────────────────────────────────
 input[type="submit"],
@@ -137,11 +102,7 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   border: none;
   box-shadow: none;
   color: #fff !important;
-  font-size: 0.65em;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 0 2em;
-  text-transform: uppercase;
   transition: background-color $transition, transform $transition, box-shadow $transition;
 
   &:hover {
@@ -154,7 +115,6 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   &:active { transform: translateY(0); }
 }
 
-// Outline variant used in sidebar "Learn More"
 .blurb .button {
   background-color: transparent;
   border: 1.5px solid _palette(accent);
@@ -166,10 +126,10 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   }
 }
 
-// ── Project cards (mini-post) ─────────────────────────────────────────────────
+// ── Project cards ─────────────────────────────────────────────────────────────
 .mini-post {
   border-radius: $radius-md;
-  border: 1px solid rgba(140,140,160,0.15);
+  border-color: rgba(140,140,160,0.15);
   box-shadow: $shadow-sm;
   overflow: hidden;
   transition: transform $transition, box-shadow $transition;
@@ -179,115 +139,83 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
     box-shadow: $shadow-lg;
   }
 
-  .image img {
-    transition: transform 0.45s $ease-out;
-  }
-
+  .image img { transition: transform 0.45s $ease-out; }
   &:hover .image img { transform: scale(1.06); }
 
   header {
-    padding: 1em 1.25em 0.75em;
-
-    h3 {
-      font-size: 0.75em;
-      font-weight: 700;
-      text-transform: none;
-      letter-spacing: -0.01em;
-      color: _palette(fg-bold);
-    }
-
-    .published {
-      font-size: 0.6em;
-      color: _palette(fg-light);
-      text-transform: none;
-      letter-spacing: 0.02em;
-    }
+    h3    { font-weight: 700; }
+    .published { text-transform: none; letter-spacing: 0.02em; }
   }
 }
 
 .cell-container .description p {
-  font-size: 0.8rem;
-  border-radius: 0 0 $radius-md $radius-md;
   background-color: rgba(255,255,255,0.92);
   backdrop-filter: blur(6px);
   transition: background-color 0.2s ease;
-
+  border-radius: 0 0 $radius-md $radius-md;
   &:hover { background-color: rgba(255,255,255,0.98); }
 }
 
-// ── Skill bars ────────────────────────────────────────────────────────────────
-.skillbar {
-  height: 10px;
-  border-radius: $radius-full;
-  background: rgba(140,140,160,0.15);
-  margin-bottom: 10px;
-}
+// ── Skill bars (new clean structure from SkillBar.js) ─────────────────────────
+.skillbar-modern {
+  margin-bottom: 1em;
 
-.skillbar-title {
-  position: relative;
-  top: auto;
-  left: auto;
-  display: block;
-  font-size: 0.78em;
-  font-weight: 600;
-  color: _palette(fg-bold);
-  background: transparent !important;
-  margin-bottom: 4px;
-  border-radius: 0;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
 
-  span {
-    background: transparent;
-    padding: 0;
-    height: auto;
-    line-height: 1.4;
-    border-radius: 0;
+  &__label {
+    font-size: 0.8em;
+    font-weight: 600;
     color: _palette(fg-bold);
   }
-}
 
-.skillbar-bar {
-  height: 10px;
-  border-radius: $radius-full;
-  margin-top: 0;
-  transition: width 0.6s $ease-out;
-}
+  &__percent {
+    font-size: 0.65em;
+    font-weight: 500;
+    color: _palette(fg-light);
+  }
 
-.skill-bar-percent {
-  position: relative;
-  right: auto;
-  top: auto;
-  display: inline-block;
-  font-size: 0.65em;
-  font-weight: 600;
-  color: _palette(fg-light);
-  height: auto;
-  line-height: 1;
-  float: right;
-  margin-top: -1.6em;
+  &__track {
+    width: 100%;
+    height: 8px;
+    background: rgba(140,140,160,0.15);
+    border-radius: $radius-full;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    border-radius: $radius-full;
+    transition: width 0.6s $ease-out;
+  }
 }
 
 // Category filter buttons
 .skillbutton {
-  background: rgba(140,140,160,0.1);
+  background: rgba(140,140,160,0.1) !important;
   border-radius: $radius-full !important;
   border: 1.5px solid transparent !important;
   box-shadow: none !important;
   color: _palette(fg) !important;
-  font-size: 0.6em !important;
+  font-size: 0.62em !important;
   font-weight: 600 !important;
   height: auto !important;
-  letter-spacing: 0.03em !important;
+  letter-spacing: 0.02em !important;
   line-height: 1 !important;
-  margin: 0.25em !important;
-  padding: 0.55em 1.2em !important;
+  margin: 0.2em !important;
+  padding: 0.5em 1.1em !important;
   text-transform: none !important;
   transition: all $transition !important;
 
   &:hover {
-    background: rgba(37,99,235,0.1);
+    background: rgba(37,99,235,0.1) !important;
     border-color: _palette(accent) !important;
     color: _palette(accent) !important;
-    transform: none;
+    transform: none !important;
     box-shadow: none !important;
   }
 }
@@ -297,51 +225,38 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   border-color: _palette(accent) !important;
   color: #fff !important;
   box-shadow: none !important;
-
   &:hover { background: darken(#2563eb, 8%) !important; }
 }
 
-// ── Resume sections ───────────────────────────────────────────────────────────
-#resume {
-  .link-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25em;
+// ── Resume ─────────────────────────────────────────────────────────────────────
+#resume .link-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
 
-    h4 {
-      margin: 0;
+  h4 {
+    margin: 0;
+    a {
+      background: rgba(140,140,160,0.1);
+      border-bottom: none;
+      border-radius: $radius-full;
+      color: _palette(fg) !important;
+      font-size: 0.6em;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.4em 1em;
+      text-transform: none;
+      transition: background $transition, color $transition;
 
-      a {
-        background: rgba(140,140,160,0.1);
-        border-bottom: none;
-        border-radius: $radius-full;
-        color: _palette(fg) !important;
-        font-size: 0.6em;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        padding: 0.4em 1em;
-        text-transform: none;
-        transition: background $transition, color $transition;
-
-        &:hover {
-          background: _palette(accent);
-          color: #fff !important;
-        }
+      &:hover {
+        background: _palette(accent);
+        color: #fff !important;
       }
     }
   }
-
-  // Download button in resume header
-  .meta .button {
-    font-size: 0.6em;
-    padding: 0.6em 1.4em;
-    height: auto;
-    line-height: 1;
-    margin-top: 0.5em;
-  }
 }
 
-// Experience — left-border timeline style
+// Experience timeline
 .jobs-container {
   position: relative;
   padding-left: 1.5em;
@@ -363,24 +278,8 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
       box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
     }
 
-    .company-name {
-      font-weight: 700;
-      font-size: 0.95em;
-      color: _palette(fg-bold);
-    }
-
-    .daterange {
-      font-size: 0.72em;
-      color: _palette(fg-light);
-      font-weight: 500;
-    }
-
-    .points li {
-      font-size: 0.88em;
-      line-height: 1.65;
-      margin-bottom: 0.35em;
-      padding-left: 0.5em;
-    }
+    .daterange { font-size: 0.72em; color: _palette(fg-light); }
+    .points li { font-size: 0.88em; line-height: 1.65; margin-bottom: 0.35em; }
   }
 }
 
@@ -392,39 +291,19 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   margin-bottom: 1.25em;
   padding: 0.75em 1.25em;
 
-  .degree {
-    font-size: 0.88em;
-    font-weight: 700;
-    text-transform: none;
-    letter-spacing: -0.01em;
-    color: _palette(fg-bold);
-    margin-bottom: 0.2em;
-  }
-
-  .school {
-    font-size: 0.78em;
-    color: _palette(fg);
-    margin-bottom: 0.2em;
-  }
-
-  .gpa {
-    font-size: 0.75em;
-    font-weight: 600;
-    color: _palette(accent);
-  }
+  .degree { text-transform: none; letter-spacing: -0.01em; }
+  .gpa    { font-size: 0.75em; font-weight: 600; color: _palette(accent); }
 }
 
 // Course pills
 .courses .course-list {
   text-align: left;
-
   ul { padding: 0; }
-
   li {
     display: inline-block;
     background: rgba(140,140,160,0.1);
     border-radius: $radius-full;
-    margin: 0.25em;
+    margin: 0.2em;
     padding: 0;
   }
 }
@@ -434,7 +313,6 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
   text-transform: none !important;
   letter-spacing: 0.01em !important;
   font-weight: 500 !important;
-  color: _palette(fg-bold) !important;
   padding: 0.4em 0.9em;
   display: inline-block;
 }
@@ -443,31 +321,25 @@ button:not(.dark-mode-button):not(.bm-cross-button):not(.bm-burger-button),
 .course-dot    { display: none !important; }
 
 // References
-.references .title h3 {
-  color: _palette(accent);
-  text-transform: none;
-  font-size: 0.9em;
-}
+.references .title h3 { color: _palette(accent); text-transform: none; }
 
 // ── Contact icons ─────────────────────────────────────────────────────────────
-.contact-icons {
-  a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-    background: rgba(140,140,160,0.1);
-    border-bottom: none;
-    transition: background $transition, transform $transition, box-shadow $transition;
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: rgba(140,140,160,0.1);
+  border-bottom: none;
+  transition: background $transition, transform $transition, box-shadow $transition;
 
-    &:hover {
-      background: _palette(accent);
-      color: #fff !important;
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
-    }
+  &:hover {
+    background: _palette(accent);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
   }
 }
 

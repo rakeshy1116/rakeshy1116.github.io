@@ -222,10 +222,9 @@ body.dark-mode {
     .job::before { background: $dark-accent; }
   }
 
-  .skillbar { background: rgba(255,255,255,0.08); }
-
-  .skillbar-title span,
-  .skillbar-title { color: $dark-fg-bold; }
+  .skillbar-modern__track { background: rgba(255,255,255,0.08); }
+  .skillbar-modern__label { color: $dark-fg-bold; }
+  .skillbar-modern__percent { color: $dark-fg-light; }
 
   .skillbutton {
     background: rgba(255,255,255,0.06) !important;
