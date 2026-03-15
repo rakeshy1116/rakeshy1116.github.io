@@ -27,7 +27,7 @@ jobs:
     environment:
       name: github-pages
       url: 'https://rakeshy1116.github.io/'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Checkout
